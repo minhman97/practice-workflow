@@ -8,11 +8,11 @@ on:
   push:
     branches: [ "main" ]
     paths:
-      - "BackEnd"
+      - "BackEnd/**"
   pull_request:
     branches: [ "main" ]
     paths:
-      - "BackEnd"
+      - "BackEnd/**"
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
