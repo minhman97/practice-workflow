@@ -33,7 +33,7 @@ jobs:
           # Format of the steps output context.
           # Can be 'space-delimited', 'csv', or 'json'.
           # Default: 'space-delimited'
-          format: ''
+          format: 'space-delimited'
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
