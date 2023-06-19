@@ -28,6 +28,12 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
+      - uses: jitterbit/get-changed-files@v1
+        with:
+          # Format of the steps output context.
+          # Can be 'space-delimited', 'csv', or 'json'.
+          # Default: 'space-delimited'
+          format: 'space-delimited'
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
