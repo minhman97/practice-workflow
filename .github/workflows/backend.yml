@@ -12,7 +12,9 @@ on:
     paths-ignore:
       - 'FrontEnd/**'
   pull_request:
-    branches: [ "main" ]
+    branches:
+      - master
+      - develop
     paths-ignore:
       - 'FrontEnd/**'
 
@@ -35,6 +37,7 @@ jobs:
       - name: Run a multi-line script
         run: |
           echo test and build your project.
+          echo ${{ github.ref }}
           
   deploy_to_dev:
     # The type of runner that the job will run on
@@ -50,6 +53,7 @@ jobs:
       - name: Run a multi-line script
         run: |
           echo deploy your project.
+          echo ${{ github.ref }}
           
   deploy_to_master:
     # The type of runner that the job will run on
@@ -65,3 +69,4 @@ jobs:
       - name: Run a multi-line script
         run: |
           echo deploy your project.
+          echo ${{ github.ref }}
