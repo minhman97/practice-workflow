@@ -38,6 +38,7 @@ jobs:
         run: |
           echo test and build your project.
           echo ${{ github.ref }}
+          echo ${{ github.head_ref }}
           
   deploy_to_dev:
     # The type of runner that the job will run on
