@@ -12,7 +12,9 @@ on:
     paths-ignore:
       - 'FrontEnd/**'
   pull_request:
-    branches: [ "main" ]
+    branches:
+      - master
+      - develop
     paths-ignore:
       - 'FrontEnd/**'
 
@@ -35,12 +37,13 @@ jobs:
       - name: Run a multi-line script
         run: |
           echo test and build your project.
+          echo ${{ github.ref }}
           
-  deploy:
+  deploy_to_dev:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
-    
-    if: github.ref == 'refs/heads/master'
+   
+    if: ${{ github.ref == 'refs/heads/develop' }}
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
@@ -50,3 +53,20 @@ jobs:
       - name: Run a multi-line script
         run: |
           echo deploy your project.
+          echo ${{ github.ref }}
+          
+  deploy_to_master:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+   
+    if: ${{ github.ref == 'refs/heads/main' }}
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v3
+
+      # Runs a set of commands using the runners shell
+      - name: Run a multi-line script
+        run: |
+          echo deploy your project.
+          echo ${{ github.ref }}
