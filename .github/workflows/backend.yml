@@ -46,7 +46,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: staging
     needs: build
-    if: github.event.pull_request.merged == true
+    if: ${{ github.ref == 'refs/heads/develop' }}
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
