@@ -64,5 +64,6 @@ jobs:
         run: |
           echo deploy your project.
           echo ${{ github.ref }}
+          echo $WORKFLOW_ENV
           
   
