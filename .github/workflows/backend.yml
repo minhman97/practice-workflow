@@ -27,8 +27,8 @@ jobs:
   build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
-#     environment: 
-#       name: ${{ if github.ref == 'refs/heads/main' }}prod${{ else }}staging${{ endif }}
+    environment: 
+      name: prod
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
@@ -44,7 +44,6 @@ jobs:
           echo ${{ github.base_ref }}
           echo ${{ github.head_ref }}
           echo ${{ vars.test }}
-          echo ${{ github.ref == 'refs/heads/main' }}
           
   deploy:
     # The type of runner that the job will run on
