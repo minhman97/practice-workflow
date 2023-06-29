@@ -44,7 +44,7 @@ jobs:
           echo ${{ github.base_ref }}
           echo ${{ github.head_ref }}
           echo ${{ vars.test }}
-          echo ${{ github.ref == 'refs/heads/main' ? 'prod' : 'staging' }}
+          echo ${{ github.ref == 'refs/heads/main' }}
           
   deploy:
     # The type of runner that the job will run on
