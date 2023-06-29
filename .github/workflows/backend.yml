@@ -44,7 +44,6 @@ jobs:
           echo ${{ github.base_ref }}
           echo ${{ github.head_ref }}
           echo ${{ vars.test }}
-          echo ${{ if: github.ref == 'refs/heads/main' }}prod${{ else }}staging${{ endif }}
           echo ${{ github.ref == 'refs/heads/main' ? 'prod' : 'staging' }}
           
   deploy:
