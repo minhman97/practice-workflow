@@ -46,7 +46,7 @@ jobs:
           echo github.event.pull_request.merged
           echo ${{ github.base_ref }}
           echo ${{ github.head_ref }}
-          echo $WORKFLOW_ENV - ${{ WORKFLOW_ENV }}
+          echo $WORKFLOW_ENV 
           
   deploy:
     # The type of runner that the job will run on
