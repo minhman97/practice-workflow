@@ -49,7 +49,7 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
-      
+       
       - name: Run a multi-line script
         run: |
           echo ${{ github.ref }}
@@ -60,9 +60,7 @@ jobs:
         with:
             target-env: $TARGET_ENV
             
-        if: ${{ github.ref == 'refs/heads/main' }}
-        env:
-          TARGET_ENV: prod
+        if: ${{ github.ref == 'refs/heads/main' }}                
       - uses: ./.github/workflows/actions
         with:
             target-env: $TARGET_ENV
