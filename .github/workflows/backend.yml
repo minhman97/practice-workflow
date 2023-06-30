@@ -63,7 +63,7 @@ jobs:
         if: ${{ github.ref == 'refs/heads/main' }}
         env:
           TARGET_ENV: prod
-      - uses: ./.github/workflows/actions/deployment
+      - uses: ./.github/workflows/actions
         with:
             target-env: $TARGET_ENV
    
