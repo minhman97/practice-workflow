@@ -82,7 +82,7 @@ jobs:
         if: ${{ github.ref == 'refs/heads/develop' }}
       - uses: ./.github/workflows/deployment.yml
         with:
-            target-env: ${{ TARGET_ENV }}
+            target-env: $TARGET_ENV
             
         if: ${{ github.ref == 'refs/heads/main' }}
         env:
