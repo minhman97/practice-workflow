@@ -59,14 +59,14 @@ jobs:
         if: ${{ github.ref == 'refs/heads/develop' }}
       - uses: ./.github/workflows/deployment.yml
         with:
-            target-env: ${ { matrix.target } }
+            target-env: ${{ TARGET_ENV }}
             
         if: ${{ github.ref == 'refs/heads/main' }}
         env:
           TARGET_ENV: prod
       - uses: ./.github/workflows/deployment.yml
         with:
-            target-env: ${ { matrix.target } }
+            target-env: ${{ TARGET_ENV }}
    
         
      
