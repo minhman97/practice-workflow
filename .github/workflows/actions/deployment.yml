@@ -1,0 +1,24 @@
+name: "Deploy to Azure"
+on:
+  workflow_call:
+    inputs:
+      target-env:
+        required: true
+        type: string
+    secrets:
+      AZURE_APP_NAME:
+        required: true
+        
+jobs:
+  deploy: 
+    name: Deploy to ${{ inputs.target-env }}
+    runs-on: ubuntu-latest
+    environment:
+      name: ${{ inputs.target-env }}
+      
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Run a multi-line script
+        run: |
+          echo environment ${{ inputs.target-env }}
