@@ -80,14 +80,14 @@ jobs:
           echo $TARGET_ENV
                   
         if: ${{ github.ref == 'refs/heads/develop' }}
-      - uses: ./.github/workflows/deployment.yml
+      - uses: ./.github/workflows/deployment
         with:
             target-env: $TARGET_ENV
             
         if: ${{ github.ref == 'refs/heads/main' }}
         env:
           TARGET_ENV: prod
-      - uses: ./.github/workflows/deployment.yml
+      - uses: ./.github/workflows/deployment
         with:
             target-env: $TARGET_ENV
    
