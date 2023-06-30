@@ -89,7 +89,7 @@ jobs:
           TARGET_ENV: prod
       - uses: ./.github/workflows/deployment.yml
         with:
-            target-env: ${{ TARGET_ENV }}
+            target-env: $TARGET_ENV
    
         
      
