@@ -56,7 +56,7 @@ jobs:
           echo $TARGET_ENV
                   
         if: ${{ github.ref == 'refs/heads/develop' }}
-      - uses: ./.github/workflows/deployment
+      - uses: ./.github/workflows/actions
         with:
             target-env: $TARGET_ENV
             
